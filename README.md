@@ -1,2 +1,2 @@
-# qt5-mlocale-git
+# libmlocale
 Contains classes MLocale and friends originally from libmeegotouch
