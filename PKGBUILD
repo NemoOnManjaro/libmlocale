@@ -5,13 +5,13 @@
 
 pkgname=libmlocale
 pkgver=0.7.6
-pkgrel=3
+pkgrel=4
 pkgdesc="Contains classes MLocale and friends originally from libmeegotouch"
 arch=('x86_64' 'aarch64')
 url="https://github.com/sailfishos/libmlocale"
 license=('LGPLv2')
 depends=('qt5-base'
-    'icu=72.1')
+	'icu=72.1')
 makedepends=( 'qt5-tools')
 source=(
   "${url}/archive/refs/tags/$pkgver.tar.gz"
@@ -35,6 +35,15 @@ package() {
   cd $pkgname-$pkgver
   cd build
   make INSTALL_ROOT="${pkgdir}" install
+
+  # move *.prf into right folder
+  mkdir -p ${pkgdir}/usr/lib/qt/mkspecs/features/
+  mv ${pkgdir}/usr/share/qt/mkspecs/features/mlocale_common.prf ${pkgdir}/usr/lib/qt/mkspecs/features/mlocale_common.prf
+  mv ${pkgdir}/usr/share/qt/mkspecs/features/mlocale_coverage.prf ${pkgdir}/usr/lib/qt/mkspecs/features/mlocale_coverage.prf
+  mv ${pkgdir}/usr/share/qt/mkspecs/features/mlocale_defines.prf ${pkgdir}/usr/lib/qt/mkspecs/features/mlocale_defines.prf
+  mv ${pkgdir}/usr/share/qt/mkspecs/features/mlocale.prf ${pkgdir}/usr/lib/qt/mkspecs/features/mlocale.prf
+  mv ${pkgdir}/usr/share/qt/mkspecs/features/mlocale_translations.prf ${pkgdir}/usr/lib/qt/mkspecs/features/mlocale_translations.prf
+
   # remove tests mess
   rm -rf "${pkgdir}/usr/lib/libmlocale-benchmarks5"
   rm -rf "${pkgdir}/usr/share/libmlocale-tests"
