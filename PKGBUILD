@@ -5,13 +5,13 @@
 
 pkgname=libmlocale
 pkgver=0.7.6
-pkgrel=4
+pkgrel=5
 pkgdesc="Contains classes MLocale and friends originally from libmeegotouch"
 arch=('x86_64' 'aarch64')
 url="https://github.com/sailfishos/libmlocale"
 license=('LGPLv2')
 depends=('qt5-base'
-	'icu=72.1')
+	'icu=73.2')
 makedepends=( 'qt5-tools')
 source=(
   "${url}/archive/refs/tags/$pkgver.tar.gz"
