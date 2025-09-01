@@ -4,7 +4,7 @@
 # Maintainer: James Kittsmiller (AJSlye) <james@nulogicsystems.com>
 
 pkgname=libmlocale
-pkgver=0.7.8
+pkgver=0.7.9
 pkgrel=1
 pkgdesc="Contains classes MLocale and friends originally from libmeegotouch"
 arch=('x86_64' 'aarch64')
@@ -20,7 +20,7 @@ source=(
   "disable-werror.patch"
   '0002-mlocale-Fix-build-with-Qt6-JB-52793.patch'
 )
-sha256sums=('1adfbbe3f4ec815247c7b5dd0d06d2b655ffd57ab1d285ea5b124e3396637235'
+sha256sums=('35a39cfb0287ffd45ece725b8256651fba5e5c32d3c67df91920efd5f803115d'
     '74a0ea1a421144c1fe9d5c3624d8e4eb4977a6286137b724a0b24999b1b0643b'
     'a3b0494ff99a424ba583bfa660470c06437d472a2cba27ea0cb25f705f081f91'
 )
